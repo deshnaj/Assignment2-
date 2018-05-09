@@ -1,0 +1,56 @@
+Tweets count from all suburbs:
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_list/sort/Tweets?&group=true&group_level=2&sorttype=descending
+
+Happy Tweets from suburb: (Replace the state and suburb accordingly)
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/SentimentTweetStateSuburb?keys=[[%22Happy%22,%22VIC%22,%22melbourne%22],[%22Happy%22,%22NSW%22,%22sydney%22]]&group=true
+
+Sad Tweets from Suburbs: (Replace the state and suburb accordingly)
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/SentimentTweetStateSuburb?keys=[[%22Sad%22,%22VIC%22,%22melbourne%22],[%22Sad%22,%22NSW%22,%22sydney%22]]&group=true
+
+Highest Salary Suburb (Top 10):
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/salarySuburb?group=true&group_level=2&descending=true&limit=10
+
+
+Top 10 NSW Suburb Salary
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/salarySuburb?descending=true&startkey=[%22nswzzz%22]&limit=10
+
+
+Top 10 Vic Suburb Salary
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/salarySuburb?descending=true&startkey=[%22viczzz%22]&endkey=[%22vic%22]&limit=10
+
+
+Tweets from certain suburbs: (Replace the state and suburb accordingly)
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/Tweets?keys=[[%22NSW%22,%22sydney%22],[%22VIC%22,%22melbourne%22]]&reduce=true&group=true
+
+Suburb Details
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/suburbDetails?keys=[[%22vic%22,%22melbourne%22],[%22nsw%22,%22sydney%22]]
+
+Popular HashTags
+http://115.146.86.43:5984/twitter_analytics/_design/Tweet/_list/sort/HashTag?reduce=true&group=true&group_level=1&sorttype=descending
+
+Suburbs Sorted According to Happy Percent and Minimum number of tweets (Top 10)
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_list/sortByAttribute/SentimentTweetStateSuburb?group=true&group_level=2&sentiment=happy&min=1
+
+Suburbs Sorted According to Sad Percent and if it has min number of tweets (Top 10)
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_list/sortByAttribute/SentimentTweetStateSuburb?group=true&group_level=2&sentiment=sad&min=1
+
+Suburbs with lowest literacy rate (Top 10)
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/literacyRateSuburb?reduce=false&limit=10
+
+Uni student Population Percent: Vic (Highest 10 student populated places)
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/UniStudentSuburb?reduce=false&descending=true&limit=10
+
+Uni Student Population percent NSW: (Highest 10 Student populated places
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/UniStudentSuburb?reduce=false&descending=true&startkey=[%22nswzzz%22]&limit=10
+
+Top 10 Suburbs with most employment rate Vic:
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/EmployedSuburb?reduce=false&descending=true&startkey=[%22viczzz%22]&endkey=[%22vic%22]&limit=10
+
+Top 10 Suburbs with most employment rate Nsw:
+http://115.146.95.140:5984/twitter_analytics/_design/Tweet/_view/EmployedSuburb?reduce=false&descending=true&startkey=[%22nswzzz%22]&limit=10
+
+Top 10 Happy Suburbs with tweets greater than some threshold
+http://localhost:9000/twitter_analytics/_design/Tweet/_list/sortByAttribute/SentimentTweetStateSuburb?group=true&group_level=2&sentiment=happy&min=1
+
+Top 10 Happy Suburbs with tweets greater than some threshold
+http://localhost:9000/twitter_analytics/_design/Tweet/_list/sortByAttribute/SentimentTweetStateSuburb?group=true&group_level=2&sentiment=sad&min=1  
